@@ -1,2 +1,5 @@
 # assignment-01-sorting
-made a repo for the assignment
+
+![Chart of runtimes](chart.png)
+
+![Data from running Test.java](data.png)
