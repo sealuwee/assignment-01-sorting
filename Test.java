@@ -7,7 +7,7 @@ public class Test {
         // n is the size of the array
         double[] arr = new double[n];
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = (new Random()).nextInt();
+            arr[i] = (new Random()).nextDouble();
         }
         return arr;
     }
