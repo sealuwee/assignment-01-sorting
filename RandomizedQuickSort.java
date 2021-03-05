@@ -2,22 +2,29 @@ import java.util.Random;
 import java.util.Arrays;
 
 public class RandomizedQuickSort {
+    public static void getRandom(double arr[], int start, int end){
+        Random r = new Random();
+        int pivot = r.nextInt(end-start)+start;
+        double temp = arr[pivot];
+        arr[pivot] = arr[end];
+        arr[end] = temp;
+    }
     public int partition(double arr[], int start, int end){
-    int pivot = (new Random()).nextInt(end);
-        int i = start-1;
-
+        getRandom(arr,start,end);
+        double pivot = arr[end];
+        int i = (start-1);
         for (int j=start;j<end;j++){
             if (arr[j]<=pivot) {
                 i++;
                 double temp = arr[i];
                 arr[i] = arr[j];
-                arr[i] = temp;
+                arr[j] = temp;
             }
         }
         double temp = arr[i+1];
         arr[i+1] = arr[end];
         arr[end] = temp;
-        return (i+1);
+        return i+1;
     }
     public void quickSort(double arr[], int start, int end){
         if (start<end){
